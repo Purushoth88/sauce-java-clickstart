@@ -19,9 +19,9 @@ public class SauceOnDemandTest {
     @Before
     public void setUp() throws Exception {
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("version", Utils.readPropertyOrEnv("SELENIUM_VERSION", "4"));
+        capabilities.setCapability("version", Utils.readPropertyOrEnv("SELENIUM_VERSION", ""));
         capabilities.setCapability("platform", Utils.readPropertyOrEnv("SELENIUM_PLATFORM", "XP"));
-        capabilities.setCapability("browserName", Utils.readPropertyOrEnv("SELENIUM_BROWSER", "firefox"));
+        capabilities.setCapability("browserName", Utils.readPropertyOrEnv("SELENIUM_BROWSER", "chrome"));
         String username = Utils.readPropertyOrEnv("SAUCE_USER_NAME", "");
         String accessKey = Utils.readPropertyOrEnv("SAUCE_API_KEY", "");
         this.webDriver = new RemoteWebDriver(

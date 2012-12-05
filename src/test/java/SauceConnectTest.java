@@ -38,9 +38,9 @@ public class SauceConnectTest {
         hostName = "localhost";
         //construct the DesiredCapabilities using the environment variables set by the Sauce CI plugin
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("version", Utils.readPropertyOrEnv("SELENIUM_VERSION", "4"));
+        capabilities.setCapability("version", Utils.readPropertyOrEnv("SELENIUM_VERSION", ""));
         capabilities.setCapability("platform", Utils.readPropertyOrEnv("SELENIUM_PLATFORM", "XP"));
-        capabilities.setCapability("browserName", Utils.readPropertyOrEnv("SELENIUM_BROWSER", "firefox"));
+        capabilities.setCapability("browserName", Utils.readPropertyOrEnv("SELENIUM_BROWSER", "chrome"));
         String username = Utils.readPropertyOrEnv("SAUCE_USER_NAME", "");
         String accessKey = Utils.readPropertyOrEnv("SAUCE_API_KEY", "");
         this.selenium = new RemoteWebDriver(new URL("http://" + username + ":" + accessKey + "@" + hostName + ":4445/wd/hub"),
